@@ -3,8 +3,7 @@ AudioPlayer player;
 AudioPlayer player2;
 
 
-void setup()
-{
+void setup(){
   size(320, 640); // made iphone-like size // does it compile faster?
   maxim = new Maxim(this);
   player = maxim.loadFile("atmos1.wav");
@@ -17,13 +16,11 @@ void setup()
 
 }
 
-void draw()
-{
+void draw(){
 //  
 }
 
-void mouseDragged()
-{
+void mouseDragged(){
   player.play();
   player2.play();
   float red = map(mouseX, 0, width, 0, 255);
@@ -44,25 +41,23 @@ void mouseDragged()
   strokeWeight(lineWidth);
   
   //rect(mouseX, mouseY, speed, speed);
+ 
+ /*
   line(pmouseX, pmouseY,mouseX, mouseY);
   
-  // add vertical symmetry
-  line(width/2+((width/2)-pmouseX),pmouseY,width/2+((width/2)-mouseX),mouseY);
+  // add vertical symmetry 
+  line(width-pmouseX,pmouseY,width-mouseX,mouseY);
   
   // add horizontal symmetry
-  line(pmouseX,height/2+((height/2)-pmouseY),mouseX,height/2+((height/2)-mouseY));
-  line(width/2+((width/2)-pmouseX),
-      height/2+((height/2)-pmouseY),
-      width/2+((width/2)-mouseX),
-      height/2+((height/2)-mouseY));
-  
-  
-  
-  //line(pmouseX,height/2-((height/2)-pmouseY),mouseX,height/2-((height/2)-mouseY));
+  line(pmouseX,height-pmouseY,mouseX,height-mouseY);
+  line(width-pmouseX, height-pmouseY, width-mouseX, height-mouseY);
+
+*/
+
   //brush1(mouseX, mouseY,speed, speed,lineWidth);
   //brush2(mouseX, mouseY,speed, speed,lineWidth);
   //brush3(mouseX, mouseY,speed, speed,lineWidth);
-  //brush4(pmouseX, pmouseY,mouseX, mouseY,lineWidth);
+  brush4(pmouseX, pmouseY,mouseX, mouseY,lineWidth);
 
   //brush5(pmouseX, pmouseY,mouseX, mouseY,lineWidth);
   //brush6(mouseX, mouseY,speed, speed,lineWidth);
@@ -77,9 +72,7 @@ void mouseDragged()
   player2.speed((float) mouseX/width/2);
 }
 
-void mouseReleased()
-{
+void mouseReleased(){
   //println("rel");
   player2.ramp(0.,1000); 
 }
-
