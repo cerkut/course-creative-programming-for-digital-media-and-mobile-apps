@@ -1,6 +1,6 @@
 int diam = 10;
-int growBy = 10;
-int fr = 25;
+int growBy = 5;
+int fr = 24;
 float centX, centY;
 
 void setup() {
@@ -21,6 +21,6 @@ void draw() {
     ellipse(centX, centY, diam, diam);
     diam += growBy;
   } else {
-    diam = 0;
+    diam = growBy;
   }
 }
